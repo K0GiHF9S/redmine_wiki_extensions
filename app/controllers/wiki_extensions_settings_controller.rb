@@ -32,9 +32,6 @@ class WikiExtensionsSettingsController < ApplicationController
           menu_setting.attributes = menu.permit(:enabled, :menu_no, :title, :page_name)
           menu_setting.save!
         }
-        #setting.auto_preview_enabled = auto_preview_enabled
-        setting.attributes = params.require(:setting).permit(:auto_preview_enabled, :tag_disabled)
-        setting.save!
       end
       flash[:notice] = l(:notice_successful_update)
     rescue => e
